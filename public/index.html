@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vigil</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="brand">
+    <span class="dot" id="pulse"></span>
+    <h1>Vigil</h1>
+    <span class="tag">an always-on agent that is not an always-on interruption</span>
+  </div>
+  <div class="model" id="model">—</div>
+</header>
+
+<section class="clock-strip" id="clockStrip">
+  <div class="clock-face">
+    <div class="clock-now">
+      <span id="clockTime">--:--</span>
+      <span class="clock-state" id="clockState">—</span>
+    </div>
+    <div class="clock-next">
+      next window in <strong id="waitLabel">—</strong>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-track" id="dayTrack"></div>
+    <div class="day-labels">
+      <span>00</span><span>07</span><span>13</span><span>19</span><span>24</span>
+    </div>
+  </div>
+  <div class="clock-actions">
+    <button data-hour="9">09:00</button>
+    <button data-hour="18">18:00</button>
+    <button data-hour="22">22:00</button>
+    <button data-hour="7">07:00</button>
+    <button id="clockReset" class="ghost">real time</button>
+  </div>
+</section>
+
+<main>
+  <!-- column 1: what arrives -->
+  <section class="col">
+    <h2>Inbound <span class="count" id="inboxCount">0</span></h2>
+    <p class="hint">Send one in. Vigil decides alone, waits for a window, or refuses.</p>
+    <div id="inbox" class="stack"></div>
+    <button id="runAll" class="primary wide">Run the whole inbox</button>
+  </section>
+
+  <!-- column 2: the agent's own log -->
+  <section class="col">
+    <h2>What Vigil did</h2>
+    <p class="hint">Every decision, with the reason it gave at the time.</p>
+    <div id="log" class="stack log"></div>
+  </section>
+
+  <!-- column 3: the three disciplines -->
+  <section class="col">
+    <h2>Held for the next window <span class="count" id="queueCount">0</span></h2>
+    <p class="hint">Nothing here reaches a human until a window opens. Never at night.</p>
+    <div id="queue" class="stack"></div>
+    <button id="openWindow" class="primary wide">Open the window now</button>
+    <div id="windowResult" class="result"></div>
+
+    <h2 class="sep">Spending ceiling</h2>
+    <div class="meter"><div class="meter-fill" id="meterFill"></div></div>
+    <p class="meter-label"><span id="spentLabel">RM 0.00</span> of <span id="ceilLabel">RM 60.00</span> used</p>
+    <form id="spendForm" class="spend">
+      <input name="amount" type="number" min="1" placeholder="amount (sen)" value="2000" required>
+      <input name="purpose" type="text" placeholder="what for" value="ad test" required>
+      <input name="expectedReturn" type="number" placeholder="expected return (sen)">
+      <button type="submit">Ask the gate</button>
+    </form>
+    <div id="spendResult" class="result"></div>
+
+    <h2 class="sep">What it remembers <span class="count" id="memCount">0</span></h2>
+    <div id="memory" class="stack mem"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <strong>Nebius Token Factory</strong> with <strong>NVIDIA Nemotron</strong>. The model chooses ACT / HOLD / REFUSE; the rules it must not override are re-checked in code afterwards.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

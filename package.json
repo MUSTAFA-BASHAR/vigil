@@ -1,0 +1,14 @@
+{
+  "name": "vigil",
+  "version": "1.0.0",
+  "description": "An always-on personal agent that is not an always-on interruption. Nebius Token Factory + NVIDIA Nemotron.",
+  "type": "commonjs",
+  "main": "server.cjs",
+  "scripts": {
+    "start": "node server.cjs",
+    "test": "node test/run.cjs"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT",
+  "private": false
+}

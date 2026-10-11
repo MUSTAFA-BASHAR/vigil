@@ -1,0 +1,14 @@
+# One-click Blueprint deploy. The only thing not in this file is the API key,
+# which is set once in the dashboard (sync: false keeps it out of the repo).
+services:
+  - type: web
+    name: vigil
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install --omit=dev
+    startCommand: node server.cjs
+    healthCheckPath: /
+    envVars:
+      - key: NEBIUS_API_KEY
+        sync: false

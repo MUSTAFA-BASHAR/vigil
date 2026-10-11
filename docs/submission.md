@@ -131,7 +131,7 @@ every week it runs.
 
 ## Links
 
-- Repository: `[after key]`
+- Repository: **https://github.com/MUSTAFA-BASHAR/vigil** (public, MIT)
 - Live demo: `[after key]`
 - Video: `[after key]`
 
@@ -143,7 +143,7 @@ every week it runs.
 |---|---|---|
 | 1 | Runs on Token Factory, uses an NVIDIA open model | client written; **needs the key to run live** |
 | 2 | Working hosted demo URL | runs locally; hosting pending |
-| 3 | Public repo + licence visible + README with setup | LICENSE (MIT) and README written |
+| 3 | Public repo + licence visible + README with setup | **done** - https://github.com/MUSTAFA-BASHAR/vigil, MIT, README with setup |
 | 4 | Public YouTube video under 3 minutes | recorder built and proven; **upload needs sign-in** |
 | 5 | Description naming where Nemotron and Token Factory were used | this document |
 | 6 | New, or significantly updated during the submission period | new, built 2026-10-11 onward |
